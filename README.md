@@ -14,3 +14,4 @@ testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
    ```
 in defaultConfig of build.gradle
 
+Espresso cheat sheet can be found here https://google.github.io/android-testing-support-library/docs/espresso/cheatsheet/
