@@ -1,5 +1,6 @@
 package com.saran.espressodemo;
 
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
@@ -22,5 +23,18 @@ public class MainActivityTest {
     @Test
     public void shouldBeAbleToLaunchMainScreen(){
         onView(ViewMatchers.withText("Hello World!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
+    }
+
+    @Test
+    public void shouldBeAbleToClickFab(){
+        onView(ViewMatchers.withId(R.id.fab)).perform(ViewActions.click());
+    }
+
+    @Test
+    public void verifyButtonClick(){
+        onView(ViewMatchers.withId(R.id.editText)).perform(ViewActions.click());
+        onView(ViewMatchers.withId(R.id.editText)).perform(ViewActions.typeText("Testing"));
+        onView(ViewMatchers.withId(R.id.button)).perform(ViewActions.click());
+        onView(ViewMatchers.withId(R.id.textView3)).check(ViewAssertions.matches(ViewMatchers.withText("Testing")));
     }
 }
